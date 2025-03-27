@@ -1,0 +1,315 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FEFFF0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Project Card Container with hover effect */
+.project-card {
+  position: relative;
+  width: 100%; /* Use percentage for responsive behavior */
+  max-width: 536px; /* But limit maximum width */
+  background-color: #fff;
+  padding: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  justify-self: center; /* Center each card in its grid cell */
+}
+
+/* Bounce up effect on hover */
+.project-card:hover {
+  transform: translateY(-10px); /* Move up 10px on hover */
+  box-shadow: 4px 14px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow for floating effect */
+}
+
+/* Move first project card to the right with transform */
+.project-card:first-of-type {
+  justify-self: end; /* Keep on right side of its grid cell */
+  margin-right: 40px;
+  transform: translateX(90px); /* Add additional rightward movement */
+}
+
+/* Adjust hover effect to include the translation */
+.project-card:first-of-type:hover {
+  transform: translateX(90px) translateY(-10px); /* Keep same X as non-hover state */
+  box-shadow: 4px 14px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Move second card to the right */
+.project-card:nth-of-type(2) {
+  justify-self: end; /* Align to right side of grid cell */
+  margin-right: 40px; /* Add right margin */
+  transform: translateX(120px); /* Additional rightward movement */
+}
+
+/* Adjust hover effect for second card */
+.project-card:nth-of-type(2):hover {
+  transform: translateX(120px) translateY(-10px); /* Keep same X as non-hover state */
+  box-shadow: 4px 14px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Move the black arrow button in the second project card to the right */
+.project-card:nth-of-type(2) .project-link-button {
+  margin-left: 116px; /* Push to the right edge */
+  margin-right: 20px; /* Add some space from the right edge */
+}
+
+/* Decorative Border */
+.border-container {
+  position: relative;
+}
+
+.decorative-border {
+  display: none; /* Hide the SVG border */
+}
+
+/* Project Date */
+.project-date {
+  font-size: 24px;
+  margin-bottom: 16px;
+  padding-left: 18px; /* Match the image's left padding */
+}
+
+/* Project Image */
+.project-image-container {
+  margin: 0;
+  margin-bottom: 16px;
+  padding-left: 18px; /* Add padding to push image right */
+}
+
+.project-image {
+  width: 464px;
+  height: 293px;
+  border: none; /* Remove the border */
+  display: block;
+}
+
+/* Project Details Footer */
+.project-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 70px;
+  width: 447px;
+  
+}
+
+/* Project Info */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 18px;
+}
+
+.project-title {
+  font-size: 36px;
+  font-weight: 700;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide any overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflowing text if needed */
+}
+
+/* Update project tags to display vertically stacked */
+.project-tags {
+  font-size: 24px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  flex-wrap: nowrap;
+  gap: 12px; /* Space between stacked items */
+  padding-left: 0; /* Remove any default padding */
+}
+
+.project-tags li {
+  white-space: nowrap; /* Prevent text wrapping */
+  display: block; /* Display as block for vertical stack */
+}
+
+/* Project Link Button */
+.project-link-button {
+  display: flex;
+  width: 38px;
+  height: 38px;
+  padding: 7px 6.641px 6.416px 7px;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-left: 50px; 
+}
+
+.project-link-button:hover {
+  transform: translateY(-2px);
+}
+
+.project-link-button:active {
+  transform: translateY(2px);
+}
+
+.project-link-button:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .project-card {
+    width: 100%;
+    max-width: 536px;
+  }
+
+  .decorative-border {
+    width: calc(100% + 36px);
+    height: auto;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-width: 464px;
+  }
+
+  .project-details {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .project-title {
+    font-size: 28px;
+  }
+
+  .project-tags {
+    font-size: 18px;
+  }
+}
+
+/* Add to stylesPortfolio.css */
+.content-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-header {
+  margin-bottom: 40px;
+}
+
+/* Portfolio Header Styles */
+.portfolio-header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.portfolio-main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 845px;
+  padding: 22px;
+  position: relative;
+  height: 100px;
+}
+
+.portfolio-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  text-align: center;
+  /* Remove the border-bottom property */
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+/* Add a wider underline using pseudo-element */
+.portfolio-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 267%; /* Makes the line wider than the text */
+  height: 4px;
+  background-color: #000;
+}
+
+/* Hide corner decorations */
+.portfolio-main-header .corner-decoration {
+  display: none;
+}
+
+/* Update project grid styling */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+  gap: 20px; /* Reduce gap if needed */
+  justify-content: center;
+  padding: 0 20px;
+  margin-top: 20px; /* Reduced from 60px to 20px */
+}
+
+/* For smaller screens, revert to single column */
+@media (max-width: 1200px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+}
+
+/* Back Button Styles */
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.back-button:hover .back-icon path {
+  stroke: #fff;
+}
+
+.back-icon {
+  transition: all 0.2s ease;
+}

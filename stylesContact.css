@@ -1,0 +1,295 @@
+/* Contact Header Styles */
+.contact-header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.contact-main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contact-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* Add underline to contact title */
+.contact-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 285%; /* Increase from 150% to 200% */
+  height: 4px;
+  background-color: #000;
+}
+
+/* Back Button Styles */
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.back-button:hover .back-icon path {
+  stroke: #fff;
+}
+
+.back-icon {
+  transition: all 0.2s ease;
+}
+
+/* Contact form container */
+.contact-form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Contact media container - flexbox layout */
+.contact-media-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+/* Adjust image container */
+.contact-image-container {
+  flex: 1;
+  max-width: 60%; /* Increased from 60% to 70% */
+  margin-bottom: 0;
+}
+
+/* Social media container */
+.social-media-container {
+  flex: 1;
+  max-width: 29%; /* Reduced from 35% to 30% */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-media-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 48px; /* Increased from 32px to 48px */
+  font-weight: 700;
+  margin-bottom: 32px; /* Increased spacing below */
+}
+
+.social-icons {
+  display: flex;
+  gap: 32px; /* Increased from 24px to 32px */
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px; /* Increased from 60px to 80px */
+  height: 80px; /* Increased from 60px to 80px */
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+/* Larger icon sizes inside the circles */
+.social-link svg {
+  width: 42px; /* Increased from default */
+  height: 42px; /* Increased from default */
+}
+
+.social-link:hover {
+  background-color: #000;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .contact-media-container {
+    flex-direction: column;
+  }
+  
+  .contact-image-container,
+  .social-media-container {
+    max-width: 100%;
+  }
+  
+  .social-media-container {
+    margin-top: 30px;
+  }
+}
+
+/* Contact image styling */
+.contact-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 550px; /* Increased from 400px to 550px */
+  border-radius: 16px; /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+}
+
+/* Cow container for centering */
+.cow-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/* Cow styling */
+.cow {
+  max-width: 100px; /* Increased from 80px to 120px */
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  padding-bottom: 10px;
+}
+
+.cow:hover {
+  transform: rotate(10deg);
+}
+
+.img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  fill: #000;
+}
+
+/* Footer attribution styles */
+.footer-attribution {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.attribution-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+/* License link styling */
+.license-link {
+  color: #3498db; /* Blue color */
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.license-link:hover {
+  color: #5dade2; /* Lighter blue on hover */
+}
+
+.license-link:active {
+  color: #2980b9; /* Darker blue when clicked */
+}
+
+/* Email popup styles */
+.email-popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.email-popup-content {
+  background-color: white;
+  padding: 30px;
+  border: 3px solid #000;
+  border-radius: 8px;
+  width: 350px;
+  max-width: 80%;
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #000;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.email-address {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 20px 0;
+  text-align: center;
+  word-break: break-all;
+}
+
+.copy-button {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 auto;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  background-color: #333;
+}

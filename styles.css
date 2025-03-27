@@ -1,4 +1,8 @@
-/* Base styles */
+/* ===== Original Header Styles (unchanged) ===== */
+
+/* Import fonts for header */
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +27,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 825px;
+    width: 845px;
     padding: 22px;
     border: 5px solid #000;
     background-color: #fff;
@@ -36,17 +40,16 @@ body {
 .header-content {
     display: flex;
     align-items: center;
-    gap: 20px; /* Adjust spacing */
+    gap: 20px;
 }
 
-/* Logo container */
+/* Logo container & logo */
 .logo-container {
     display: flex;
     align-items: center;
 }
-
 .logo {
-    width: 304px;
+    width: 305px;
     height: 49px;
 }
 
@@ -54,7 +57,7 @@ body {
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 15px; /* Adjust this to control spacing between navigation items */
 }
 
 .nav-link {
@@ -67,35 +70,46 @@ body {
 }
 
 .nav-link.portfolio-link {
-    margin-right: 10px; /* Adjust this value to move the "Portfolio" link left or right */
+    margin-right: 10px;
 }
 
-.nav-link:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: -16px; /* Adjust this value based on your gap */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 5px;
-    height: 100px; /* Adjust this value based on your font size */
-    background-color: #000;
-}
-
+/* Remove the existing vertical line rules that add lines after each link */
+.nav-link:not(:last-child)::after,
 .nav-link:first-child::after {
-    content: "";
-    position: absolute;
-    right: -25px; /* Adjust this value based on your gap */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 5px;
-    height: 100px; /* Adjust this value based on your font size */
-    background-color: #000;
+    content: none; /* This removes all the auto-generated lines */
 }
 
-.vertical-line {
+/* Add styling for the vertical dividers */
+.vertical-line.divider {
+    display: none; /* Hide all vertical dividers by default */
     width: 5px;
-    height: 100px; /* Adjust height */
-    background-color: black;
+    height: 100px;
+    background-color: #000;
+    margin: 0 15px;
+}
+
+/* Only show the divider between Contact Me and About Me */
+.nav-link[href="#contact"] + .vertical-line.divider {
+    display: block; /* Show only this specific divider */
+}
+
+/* Show the divider between Portfolio and Contact Me */
+.nav-link[href="#portfolio"] + .vertical-line.divider {
+    display: block; /* Show this specific divider */
+}
+
+/* Show the divider between Portfolio and Contact Me */
+.nav-link[href="portfolio.html"] + .vertical-line.divider {
+    display: block; /* Show this specific divider */
+}
+
+/* Vertical line between logo and navigation */
+.vertical-line:not(.divider) {
+    display: block; /* Make sure it's visible */
+    width: 5px;
+    height: 100px;
+    background-color: #000;
+    margin: 0 15px;
 }
 
 /* Mobile menu button */
@@ -116,297 +130,314 @@ body {
     background-color: #fff;
 }
 
-.top-right {
+.corner-decoration.top-right {
     right: -7px;
     top: -7px;
 }
 
-.bottom-right {
+.corner-decoration.bottom-right {
     right: -7px;
     bottom: -7px;
 }
 
-.bottom-left {
+.corner-decoration.bottom-left {
     left: -7px;
     bottom: -7px;
 }
 
-.top-left {
+.corner-decoration.top-left {
     left: -7px;
     top: -7px;
 }
 
-.card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin-top: 20px;
-    width: 100%;
+/* Vertical divider styles */
+.vertical-line {
+  height: 32px; /* Match to your header height */
+  width: 2px;
+  background-color: black;
+  margin: 0 16px; /* Space on both sides of the line */
 }
 
-.card-content {
-    position: relative;
-    width: 60%; /* Adjust this value to make the box smaller */
-    max-width: 550px; /* Adjust this value to set a maximum width */
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-left: 700px; /* Move the box to the right */
+/* Ensure dividers in navigation are visible */
+.main-nav .vertical-line.divider {
+  display: block; /* Make sure it's visible */
+  height: 90px;
+  opacity: 1;
 }
 
-.navigation-controls {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-}
+/* ===== New Main Content Styles from Provided Code ===== */
 
-.nav-dot {
-    width: 10px;
-    height: 10px;
-    background-color: #000;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.nav-arrow {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
-
-.action-button-container {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-}
-
-.action-button-image {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-
-/* White box under header */
+/* Main content container */
 .content-container {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 16px;
-    margin-top: 20px;
-}
-
-.content-box {
-    width: 500px;
-    padding: 32px;
-    border: 5px solid #000;
-    background-color: #fff;
-    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
-    position: relative;
-    min-height: 500px; /* Adjust height as needed */
-    margin-right: 80px;
-}
-
-/* Add corner decorations if desired */
-.content-box::before,
-.content-box::after {
-    content: "";
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    border: 3px solid #000;
-    background-color: #fff;
-}
-
-.content-box::before {
-    right: -7px;
-    top: -7px;
-}
-
-.content-box::after {
-    left: -7px;
-    bottom: -7px;
-}
-
-/* Profile image in white box */
-.profile-image {
-  display: block;
-  width: 100%; /* Changed from max-width to width for full container width */
-  height: auto;
-  margin: 0 auto 20px;
-  border: 3px solid #000;
-  border-radius: 8px;
-}
-
-/* Profile image in white box */
-.image-container {
-  margin: 0 auto;
-  padding-top: 25px;
+  display: flex;
+  margin-top: 51px;
   width: 100%;
-  max-width: 70%; /* Changed from 286px to fill container */
+  max-width: 1324px;
+  flex-direction: column;
 }
 
-.responsive-image {
-  aspect-ratio: 0.78;
-  object-fit: cover; /* Changed from contain to cover to fill the container */
+/* Content wrapper */
+.content-wrapper {
+  width: 100%;
+  max-width: 1045px;
+}
+
+/* Columns layout */
+.content-columns {
+  gap: 20px;
+  display: flex;
+}
+
+/* Left column styling */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 43%;
+  margin-left: 0;
+}
+
+/* Welcome frame for the desk section */
+.welcome-frame {
+  background-color: #fff;
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.25); /* Updated shadow to match header style */
+  margin: 0 auto;
+  width: 95%;
+  max-width: 500px;
+  padding: 12px 12px 40px 12px;
+  flex-direction: column;
+  font-family: "Just Me Again Down Here", sans-serif;
+  color: #000;
+  font-weight: 400;
+  display: flex;
+  border: 3px solid #000;
+}
+
+/* Welcome header */
+.welcome-header {
+  align-self: end;
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+  font-size: 40px;
+}
+
+/* Welcome title */
+.welcome-title {
+  align-self: start;
+  margin-top: 12px;
+  flex-grow: 1;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+/* Desk icon image */
+.desk-icon {
+  aspect-ratio: 1.36;
+  object-fit: contain;
+  object-position: center;
+  width: 79px;
+  flex-shrink: 0;
+}
+
+/* Welcome description paragraph */
+.welcome-description {
+  font-size: 30px;
+  align-self: start;
+  margin-top: 23px;
+  font-family: "Just Me Again Down Here", sans-serif;
+  font-weight: 400;
+}
+
+/* Right column styling */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 57%;
+  margin-left: 20px;
+}
+
+/* Resume container */
+.resume-container {
+  background-color: #000;
+  display: flex;
+  margin: 91px auto 0;
+  width: 100%;
+  padding: 16px 30px;
+  flex-direction: column;
+  align-items: stretch;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+/* Resume content box */
+.resume-content {
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  padding: 12px 8px 52px 0;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Arrow icon styling */
+.arrow-icon {
+  aspect-ratio: 0.26;
+  object-fit: contain;
+  object-position: center;
+  width: 25px;
+  border-radius: 0;
+  align-self: end;
+  margin-top: 43px;
+  flex-shrink: 0;
+}
+
+/* Resume button styling */
+.resume-button {
+  align-self: stretch;
+  border-radius: 92px;
+  background-color: #fff;
+  border: 8px solid #000;
+  margin: auto 0;
+  margin-top: 35px; 
+  margin-left: 30px; /* Add this line to move the button to the right */
+  min-height: 50px;
+  padding: 27px 55px;
+  gap: 10px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 29px;
+  color: #000;
+  font-weight: 700;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Icons container styling */
+.icons-container {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 3px;
+  color: #fff;
+  width: 26px;
+}
+
+/* Small icon styling */
+.small-icon {
+  aspect-ratio: 1.27;
+  object-fit: contain;
+  object-position: center;
+  width: 19px;
+}
+
+/* Language icon styling */
+.language-icon {
+  aspect-ratio: 2;
+  object-fit: contain;
   object-position: center;
   width: 100%;
-  height: 100%;
-  border-radius: 95px;
-  max-width: 100%; /* Changed from 286px to fill container */
-  display: block;
-  border: 3px solid #000; /* Keep the border from your original styling if desired */
+  align-self: stretch;
+  margin-top: 41px;
 }
 
-/* Main content layout */
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Japanese text styling */
+.japanese-text {
+  font-family: "Just Me Again Down Here", sans-serif;
+  font-weight: 400;
+}
+
+/* React icon styling */
+.react-icon {
+  aspect-ratio: 2;
+  object-fit: contain;
+  object-position: center;
   width: 100%;
-  padding: 0 16px;
-  margin-top: 20px;
+  align-self: stretch;
+  margin-top: 8px;
 }
 
-/* Left side content */
-.left-content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.content-wrapper {
-  position: relative;
-  width: 618px;
-  height: 222px;
-}
-
-.highlight-box {
-  position: absolute;
-  left: 369px;
-  top: 25px;
-  width: 210px;
-  height: 54px;
-  background-color: #ffdc58;
-  z-index: 1;
-}
-
-.main-text {
-  position: relative;
-  width: 100%;
-  text-align: center;
-  font-size: 80px;
-  font-family: "Space Grotesk", sans-serif;
+/* React text styling */
+.react-text {
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
-  line-height: 1.5;
-  color: #000;
-  z-index: 2;
 }
 
-.icon-container {
-  position: relative;
+/* Bottom image styling */
+.bottom-image {
+  aspect-ratio: 2.31;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  border-radius: 0;
+  align-self: end;
+  max-width: 1088px;
 }
 
-.bird-icon {
-  position: absolute;
-  left: 496px;
-  top: 10px;
-  width: 97px;
-  height: 73px;
-}
-
-/* Right content - Already defined in your CSS */
-.content-container {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  padding: 16px;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1200px) {
-  .main-content {
-    flex-direction: column;
-  }
-  
-  .left-content {
-    margin-bottom: 30px;
-  }
-  
-  .content-wrapper {
-    transform: scale(0.8);
-  }
-}
-
-@media (max-width: 768px) {
-  .content-wrapper {
-    transform: scale(0.6);
-  }
-  
-  .main-text {
-    font-size: 60px;
-  }
-}
-
-/* Media queries */
+/* Responsive adjustments */
 @media (max-width: 991px) {
-    .main-header {
-        width: 600px;
-    }
+  .content-container {
+    margin-top: 40px;
+    max-width: 100%;
+  }
+
+  .content-wrapper {
+    max-width: 100%;
+  }
+
+  .content-columns {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .left-column {
+    width: 100%;
+  }
+
+  .welcome-frame {
+    margin-top: 40px;
+    max-width: 100%;
+  }
+
+  .right-column {
+    width: 100%;
+  }
+
+  .resume-container {
+    margin-top: 40px;
+    padding: 16px 20px;
+  }
+
+  .resume-content {
+    max-width: 100%;
+  }
+
+  .arrow-icon {
+    margin-top: 40px;
+  }
+
+  .resume-button {
+    padding: 27px 20px;
+  }
+
+  .language-icon {
+    margin-top: 40px;
+  }
+
+  .bottom-image {
+    max-width: 100%;
+  }
 }
 
-@media (max-width: 640px) {
-    .main-header {
-        width: 100%;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .main-nav {
-        display: none;
-    }
-
-    .mobile-menu-button {
-        display: block;
-    }
-
-    .logo {
-        width: 240px;
-    }
-}
-
-/* Portfolio button */
-.portfolio-button {
-  display: inline-block;
-  padding: 12px 40px; /* Increased horizontal padding to make it wider */
-  background-color: #fff;
-  color: #000;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  text-decoration: none;
-  border: 3px solid #000;
-  border-radius: 50px; /* Increased border-radius for oval shape */
-  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s ease;
-  position: absolute; /* Use absolute positioning */
-  top: 550px; /* Adjust this value to position vertically */
-  right: 78%; /* Adjust this value to position horizontally from right */
-}
-
-.portfolio-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
-}
-
-.portfolio-button:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+/* Responsive adjustments for header */
+@media (max-width: 1250px) {
+  .main-header {
+    width: 90%; /* Use percentage for better responsiveness */
+  }
 }

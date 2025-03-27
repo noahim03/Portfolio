@@ -18,7 +18,7 @@
     <div class="header-container">
       <header class="main-header">
         <div class="header-content">
-          <!-- Logo Container with Image and Text -->
+          <!-- Logo Container with SVG Logo and Text -->
           <div class="logo-container">
             <svg
               width="305"
@@ -48,14 +48,16 @@
             </svg>
           </div>
 
-          <!-- Vertical Line -->
+          <!-- Vertical divider after the logo -->
           <div class="vertical-line"></div>
 
-          <!-- Navigation -->
+          <!-- Navigation with vertical dividers between items -->
           <nav class="main-nav">
-            <a href="#portfolio" class="nav-link portfolio-link">Portfolio</a>
-            <a href="#contact" class="nav-link">Contact Me</a>
-            <a href="#aboutme" class="nav-link aboutme-link">About Me</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <div class="vertical-line divider"></div>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <div class="vertical-line divider"></div>
+            <a href="about.html" class="nav-link">About</a>
           </nav>
         </div>
 
@@ -69,52 +71,69 @@
         <div class="corner-decoration top-left"></div>
       </header>
     </div>
-    
-    <div class="main-content">
-      <!-- Left side - "I try my BEST" section -->
-      <section class="left-content">
-        <div class="content-wrapper">
-          <div class="highlight-box" aria-hidden="true"></div>
-          <h1 class="main-text">I try my BEST</h1>
-          <div class="icon-container">
-            <svg
-              width="98"
-              height="74"
-              viewBox="0 0 98 74"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="bird-icon"
-              aria-hidden="true"
-            >
-              <path
-                d="M32.1557 6.04773C26.1557 15.2477 27.4891 28.1811 34.4224 26.8477C39.7557 25.9144 45.0891 10.8477 42.4224 4.04773C40.5557 -1.15227 36.4224 -0.352268 32.1557 6.04773Z"
-                fill="#0C0C0C"
-              ></path>
-              <path
-                d="M69.6231 8.31405C64.9564 11.3807 63.4897 25.514 67.0897 32.5807C69.8897 37.914 73.7564 37.7807 77.2231 32.1807C80.9564 26.314 80.1564 15.2474 75.7564 10.5807C72.4231 6.98071 71.8897 6.84738 69.6231 8.31405Z"
-                fill="#0C0C0C"
-              ></path>
-              <path
-                d="M0.288106 22.5807C-1.57856 29.914 5.88811 48.314 15.0881 58.8473C17.8881 62.1806 23.4881 66.1806 28.8214 68.8473C37.2214 72.9806 38.5548 73.2473 51.7548 73.2473C64.4214 73.2473 66.5548 72.8473 74.1548 69.3806C83.8881 64.8473 97.0881 51.6473 97.0881 46.314C97.0881 41.6473 93.7548 42.4473 84.5548 49.7806C74.4214 57.7806 69.6214 60.314 61.2214 61.914C53.2214 63.3806 40.2881 61.514 33.2214 57.914C24.8214 53.6473 12.4214 37.914 7.48811 25.2473C4.95477 18.8473 1.62144 17.514 0.288106 22.5807Z"
-                fill="#0C0C0C"
-              ></path>
-            </svg>
-          </div>
-        </div>
-        <!-- Portfolio Button -->
-        <a href="#portfolio" class="portfolio-button">Portfolio</a>
-      </section>
-      
-      <!-- Right side - White box with profile photo -->
-      <div class="content-container">
-        <div class="content-box">
-          <!-- Profile picture with image container -->
-          <div class="image-container">
-            <img src="img/p2.png" alt="Noah's Profile Picture" class="responsive-image">
-          </div>
-          <!-- Additional content can go here -->
+
+    <!-- New main content section -->
+    <main class="content-container">
+      <div class="content-wrapper" space="69">
+        <div class="content-columns">
+          <section class="left-column">
+            <div class="welcome-frame">
+              <div class="welcome-header">
+                <h1 class="welcome-title">Welcome to my Desk:</h1>
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/07202fc0a5dc95161d93d212ce8dfd7a13612429?placeholderIfAbsent=true&apiKey=06b242cc5f094243a48af7e24ba49b66"
+                  class="desk-icon"
+                  alt="Desk icon"
+                />
+              </div>
+              <p class="welcome-description">
+                - Still exploring where I want to specialize
+                <br />
+                - AI? Web Development? Software?
+                <br />
+                - UC Davis Computer Science Major
+              </p>
+            </div>
+          </section>
+
+          <section class="right-column">
+            <div class="resume-container">
+              <div class="resume-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/99f9f771d8761fa1e5cd544d9f41eee6d97fcda2?placeholderIfAbsent=true&apiKey=06b242cc5f094243a48af7e24ba49b66"
+                  class="arrow-icon"
+                  alt="Arrow icon"
+                />
+                <a href="resume/r.pdf" download class="resume-button">Resume</a>
+                <div class="icons-container">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/175bf3a022f094bf3d07115aa850d158177a5c8a?placeholderIfAbsent=true&apiKey=06b242cc5f094243a48af7e24ba49b66"
+                    class="small-icon"
+                    alt="Icon"
+                  />
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c5991efcfe5ddec4ce0608336bc2fe659bdb360e?placeholderIfAbsent=true&apiKey=06b242cc5f094243a48af7e24ba49b66"
+                    class="language-icon"
+                    alt="Language icon"
+                  />
+                  <div class="japanese-text">日本語</div>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/737a0cd9b67452828c7bb4edecc91be39b6702cc?placeholderIfAbsent=true&apiKey=06b242cc5f094243a48af7e24ba49b66"
+                    class="react-icon"
+                    alt="React icon"
+                  />
+                  <div class="react-text">joy-of-react</div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </div>
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/074daf360d2a5c995ebe540d09c0f55f2c3d3079?placeholderIfAbsent=true&apiKey=06b242cc5f094243a48af7e24ba49b66"
+        class="bottom-image"
+        alt="Bottom illustration"
+      />
+    </main>
   </body>
 </html>
