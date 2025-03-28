@@ -1,0 +1,475 @@
+/* About Header Styles */
+.about-header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.about-main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.about-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* Add underline to about title */
+.about-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 345%; /* Same as portfolio and contact pages */
+  height: 4px;
+  background-color: #000;
+}
+
+/* Back Button Styles */
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.back-button:hover .back-icon path {
+  stroke: #fff;
+}
+
+.back-icon {
+  transition: all 0.2s ease;
+}
+
+/* About content layout */
+.about-content {
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking */
+  align-items: center; /* Center horizontally */
+  width: 100%;
+  max-width: 100%;
+  justify-content: flex-end; /* Changed from center to flex-end */
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 20vh;
+}
+
+/* Footer attribution styles */
+.footer-attribution {
+  margin-top: auto; /* Changed from fixed 60px to auto */
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.attribution-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.license-link {
+  color: #3498db;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.license-link:hover {
+  color: #5dade2;
+}
+
+/* Overall page structure for sticky footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Use viewport height to ensure minimum full height */
+}
+
+/* Make main content grow to push footer down */
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px; /* Reduce from 40px */
+  margin-left: 125px; /* Align to the right */
+}
+
+/* Question CTA styles */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap");
+
+.question-cta-container {
+  width: 70%; /* Reduced from 80% */
+  max-width: 900px; /* Reduced from 1000px */
+  margin: -60px 0 0 auto;
+  border-radius: 2px;
+  border: 5px solid #000; /* Reduced from 6px */
+  background-color: #fff;
+  box-shadow: none; /* Add this to explicitly remove any shadow */
+  padding: 30px; /* Reduced from 40px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px; /* Reduced from 40px */
+  width: 80%; /* Keep your current width */
+}
+
+/* Remove any floating or absolute positioning that might be affecting layout */
+.question-cta-container:nth-child(2) {
+  position: relative; /* Reset any positioning */
+  margin-top: 20px; /* Extra space after first container */
+  width: 400px; /* Fixed width instead of percentage */
+  height: 200px; /* Same as width to create a square */
+  max-width: 500px; /* Override the previous max-width */
+  padding: 40px; /* Adjust padding for better content positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.question-heading {
+  font-size: 38px; /* Reduced from 42px */
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  text-align: center;
+  line-height: 48px; /* Reduced from 52px */
+  letter-spacing: 1.65px;
+  margin-bottom: 30px; /* Reduced from 40px */
+}
+
+/* Make the question heading in the second container smaller */
+.question-cta-container:nth-child(2) .question-heading {
+  font-size: 23px; /* Reduced from 25px */
+  line-height: 38px; /* Reduced from 42px */
+  letter-spacing: 1.2px; /* Slightly reduced letter spacing */
+  margin-bottom: 20px; /* Reduced from 30px */
+}
+
+.message-button {
+  font-size: 22px; /* Reduced from 29px */
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  padding: 20px 40px; /* Reduced from 30px 55px */
+  border-radius: 80px; /* Slightly reduced from 92px */
+  border: 6px solid #000; /* Reduced from 8px */
+  background-color: #bae6ff;
+  transform: rotate(0.543deg);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.message-button:hover {
+  transform: translateY(-5px) rotate(0.543deg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 991px) {
+  .question-cta-container {
+    width: 100%;
+    margin: -60px auto 0;
+    padding: 30px;
+  }
+
+  .question-heading {
+    font-size: 36px; /* Adjusted from 45px */
+  }
+}
+
+@media (max-width: 640px) {
+  .question-cta-container {
+    padding: 20px;
+  }
+
+  .question-heading {
+    font-size: 30px; /* Adjusted from 35px */
+    margin-bottom: 30px;
+  }
+  
+  .message-button {
+    font-size: 18px;
+    padding: 15px 30px;
+    border-width: 5px;
+  }
+}
+
+/* Question modal styles */
+.question-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 30px;
+  border: 6px solid black;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.textarea-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#questionText {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  border: 2px solid black;
+  resize: vertical;
+}
+
+.character-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.near-limit {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  background-color: #bae6ff;
+  border: 4px solid black;
+  border-radius: 40px;
+  padding: 12px 25px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit-status {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+/* Success screen styles */
+.success-screen {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+.checkmark-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* White background for the box */
+  border: 6px solid #000; /* Black border around the box */
+  border-radius: 12px; /* Rounded corners for the box */
+  padding: 40px; /* Add padding inside the box */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional shadow for the box */
+}
+
+.checkmark {
+  width: 72px;
+  height: 72px;
+  stroke-width: 2;
+  stroke: #4caf50;
+  fill: none;
+  stroke-linecap: round;
+  animation: checkmark 0.5s ease-in-out forwards;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.3s forwards;
+}
+
+.success-message {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4caf50;
+  margin-top: 20px;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.question-answer {
+  font-size: 18px; /* Reduced from 24px */
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  margin-top: -10px; /* Adjusted from -15px */
+}
+
+/* Container for side-by-side hobby boxes - moved to the right */
+.hobby-boxes-row {
+  display: flex;
+  justify-content: flex-end; /* Keep this to align items to right edge */
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  padding-right: 0; /* Remove any padding-right */
+  margin-right: 0; /* Remove any margin-right */
+  transform: translateX(228px); /* Move boxes 120px to the right */
+}
+
+/* Style for the hobby boxes */
+.hobby-box {
+  width: 400px !important; /* Fixed width */
+  height: 200px !important; /* Same height as before */
+  margin-top: 0 !important; /* Override the previous margin */
+  flex: 0 0 auto; /* Prevent boxes from growing/shrinking */
+}
+
+/* Override nth-child selector to ensure consistent styling */
+.question-cta-container.hobby-box {
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+}
+
+/* Make question headings in hobby boxes smaller */
+.hobby-box .question-heading {
+  font-size: 20px; /* Reduced from 23px */
+  line-height: 28px; /* Reduced from 38px */
+  letter-spacing: 1px; /* Reduced from 1.2px */
+  margin-bottom: 15px; /* Reduced from 20px */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 991px) {
+  .hobby-boxes-row {
+    flex-direction: column;
+    align-items: center;
+    padding-right: 0; /* Reset padding on smaller screens */
+  }
+  
+  .hobby-box {
+    margin-top: 20px !important;
+  }
+}
+
+/* Media query adjustments for responsive layout */
+@media (max-width: 1200px) {
+  .hobby-boxes-row {
+    flex-wrap: wrap;
+  }
+  
+  .hobby-box {
+    margin-bottom: 20px !important;
+  }
+}
+
