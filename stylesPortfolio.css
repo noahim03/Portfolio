@@ -313,3 +313,33 @@ body {
 .back-icon {
   transition: all 0.2s ease;
 }
+
+/* Footer attribution styles */
+.footer-attribution {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.attribution-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.license-link {
+  color: #3498db;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.license-link:hover {
+  color: #5dade2;
+}

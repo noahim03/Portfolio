@@ -146,6 +146,18 @@
   transform: translateY(-5px);
 }
 
+/* Cow styling inside social media container */
+.social-media-container .cow {
+  max-width: 80px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin: 0 auto 24px; /* Center horizontally with bottom margin */
+}
+
+.social-media-container .cow:hover {
+  transform: rotate(10deg);
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .contact-media-container {
